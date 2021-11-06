@@ -1,0 +1,103 @@
+<app-layout>
+  <mat-toolbar class="page-header" role="heading">
+    <h1>Create New Case</h1>
+  </mat-toolbar>
+  <mat-tab-group
+    [selectedIndex]="selectedIndex"
+    mat-stretch-tabs
+    class="example-stretched-tabs mat-elevation-z4 create-window light-background"
+  >
+    <mat-tab label="Case Details" [disabled]="true">
+      <app-applicant-details
+        class="create-check-tab"
+        (formState)="handleApplicantDetails($event)"
+      >
+      </app-applicant-details>
+      <app-tab-controls
+        (back)="navigateTabs(false)"
+        (forward)="navigateTabs(true)"
+        [showBack]="false"
+        [showForward]="true"
+      >
+      </app-tab-controls>
+    </mat-tab>
+    <mat-tab label="Police Check" [disabled]="true">
+      <app-automated-check
+        [checkType]="'police'"
+        [checkName]="'Police Background'"
+        class="create-check-tab"
+        (selection)="handleAutomatedSelection($event, checkTypes.Police)"
+      >
+      </app-automated-check>
+      <app-tab-controls
+        (back)="navigateTabs(false)"
+        (forward)="navigateTabs(true)"
+        [showBack]="true"
+        [showForward]="true"
+      >
+      </app-tab-controls>
+    </mat-tab>
+    <mat-tab label="Right to work" [disabled]="true">
+      <app-automated-check
+        [checkType]="'Right to Work'"
+        [checkName]="'Right to Work'"
+        class="create-check-tab"
+        (selection)="handleAutomatedSelection($event, checkTypes.RightToWork)"
+      >
+      </app-automated-check>
+      <app-tab-controls
+        (back)="navigateTabs(false)"
+        (forward)="navigateTabs(true)"
+        [showBack]="true"
+        [showForward]="true"
+      >
+      </app-tab-controls>
+    </mat-tab>
+    <mat-tab label="Academic History" [disabled]="true">
+      <app-manual-check
+        class="create-check-tab"
+        [checkTitle]="'Academic History'"
+        [checkType]="checkTypes.Academic"
+        [firstName]="newCase.firstName"
+        [lastName]="newCase.lastName"
+        (checkState)="handleManualSelection($event, checkTypes.Academic)"
+      >
+      </app-manual-check>
+      <app-tab-controls
+        (back)="navigateTabs(false)"
+        (forward)="navigateTabs(true)"
+        [showBack]="true"
+        [showForward]="true"
+      >
+      </app-tab-controls>
+    </mat-tab>
+    <mat-tab label="Employment History" [disabled]="true">
+      <app-manual-check
+        class="create-check-tab"
+        [checkTitle]="'Employment History'"
+        [checkType]="checkTypes.Employment"
+        [firstName]="newCase.firstName"
+        [lastName]="newCase.lastName"
+        (checkState)="handleManualSelection($event, checkTypes.Employment)"
+      >
+      </app-manual-check>
+      <app-tab-controls
+        (back)="navigateTabs(false)"
+        (forward)="navigateTabs(true)"
+        [showBack]="true"
+        [showForward]="true"
+      >
+      </app-tab-controls>
+    </mat-tab>
+    <mat-tab label="Other" [disabled]="true">
+      <app-other-check class="create-check-tab" (otherSelection)="handleOtherSelection($event)"> </app-other-check>
+      <app-tab-controls
+        (back)="navigateTabs(false)"
+        (forward)="createCase(newCase)"
+        [showBack]="true"
+        [showForward]="true"
+      >
+      </app-tab-controls>
+    </mat-tab>
+  </mat-tab-group>
+</app-layout>

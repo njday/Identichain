@@ -1,0 +1,23 @@
+<div class="police-check create-check-container">
+  <mat-toolbar class="page-header" role="heading">
+    <h5>Do you want to conduct a {{ checkName }} Check?</h5>
+  </mat-toolbar>
+  <div class="create-check-container justify-center">
+    <p>Note: an email will sent to the applicant automatically.</p>
+    <p>
+      After they provide any required information the results of the check will
+      be updated.
+    </p>
+    <mat-radio-group
+      aria-label="Select an option"
+      (change)="selection.emit($event.value === 'true')"
+    >
+      <mat-radio-button class="check-radio-button" value="{{ true }}"
+        >Conduct {{ checkName }} check</mat-radio-button
+      >
+      <mat-radio-button class="check-radio-button" value="{{ false }}"
+        >Skip this check</mat-radio-button
+      >
+    </mat-radio-group>
+  </div>
+</div>

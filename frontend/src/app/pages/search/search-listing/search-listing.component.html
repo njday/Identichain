@@ -1,0 +1,21 @@
+<app-layout>
+  <mat-toolbar class="page-header" role="heading">
+    <h1>Search Cases</h1>
+  </mat-toolbar>
+  <div class="create-check-container">
+    <form class="form stacked-form" [formGroup]="form">
+      <div class="vertical-align">
+        <mat-form-field class="create-form-input" style="width: 80px">
+          <input
+            matInput
+            placeholder="Search..."
+            type="email"
+            formControlName="searchTerm"
+          />
+        </mat-form-field>
+        <mat-icon>search</mat-icon>
+      </div>
+    </form>
+  </div>
+  <app-case-list [requestConsent]="true" [hideTitle]="true" [caseData]="filteredData"></app-case-list>
+</app-layout>

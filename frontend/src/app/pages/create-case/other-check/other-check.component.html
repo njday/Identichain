@@ -1,0 +1,33 @@
+<div class="manual-check">
+  <mat-toolbar class="page-header justify-center" role="heading">
+    <h5>Please add any additional information:</h5>
+  </mat-toolbar>
+  <div class="create-check-container">
+    <form class="form stacked-form align-items" [formGroup]="form">
+      <div>
+        <mat-form-field class="create-form-input">
+          <input matInput placeholder="Check Name" formControlName="title" (change)="otherSelection.emit($event.target.value)" />
+        </mat-form-field>
+        <mat-form-field class="create-form-input">
+          <input
+            matInput
+            placeholder="Description"
+            type="email"
+            formControlName="description"
+          />
+        </mat-form-field>
+      </div>
+      <mat-form-field class="create-form-input max-width">
+        <textarea
+          matInput
+          mat-autosize
+          placeholder="Notes"
+          type="text"
+          formControlName="notes"
+        ></textarea>
+      </mat-form-field>
+      <app-file-dropzone class="file-drop-zone">
+      </app-file-dropzone>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,96 @@
+<form class="form stacked-form" [formGroup]="form">
+  <div>
+    <mat-form-field class="check-email-input">
+      <input matInput placeholder="First Name" formControlName="firstName" />
+    </mat-form-field>
+    <mat-form-field class="check-email-input">
+      <input
+        matInput
+        placeholder="Last Name"
+        type="email"
+        formControlName="lastName"
+      />
+    </mat-form-field>
+    <mat-form-field class="check-email-input" *ngIf="checkType ===checkTypes.Academic">
+      <input
+        matInput
+        placeholder="Academic Institution"
+        type="email"
+        formControlName="institute"
+      />
+    </mat-form-field>
+  </div>
+  <div>
+    <ng-container *ngIf="checkType === checkTypes.Employment">
+      <mat-form-field class="check-email-input">
+        <input
+          matInput
+          placeholder="Employer"
+          type="email"
+          formControlName="employer"
+        />
+      </mat-form-field>
+      <mat-form-field class="check-email-input">
+        <input
+          matInput
+          placeholder="Title"
+          type="email"
+          formControlName="title"
+        />
+      </mat-form-field>
+      <mat-form-field class="check-email-input">
+        <input
+          matInput
+          placeholder="Tenure"
+          type="email"
+          formControlName="tenure"
+        />
+      </mat-form-field>
+    </ng-container>
+    <ng-container *ngIf="checkType === checkTypes.Academic">
+      <mat-form-field class="check-email-input">
+        <input
+          matInput
+          placeholder="Degree"
+          type="email"
+          formControlName="degree"
+        />
+      </mat-form-field>
+      <mat-form-field class="check-email-input">
+        <input
+          matInput
+          placeholder="Major/Specialisation"
+          type="email"
+          formControlName="major"
+        />
+      </mat-form-field>
+      <mat-form-field class="check-email-input">
+        <input
+          matInput
+          placeholder="Graduation Year"
+          type="email"
+          formControlName="year"
+        />
+      </mat-form-field>
+    </ng-container>
+
+  </div>
+  <div>
+    <mat-form-field class="check-email-input">
+      <input
+        matInput
+        placeholder="Contact Name"
+        type="email"
+        formControlName="contactName"
+      />
+    </mat-form-field>
+    <mat-form-field class="check-email-input">
+      <input
+        matInput
+        placeholder="Contact Email"
+        type="email"
+        formControlName="contactEmail"
+      />
+    </mat-form-field>
+  </div>
+</form>

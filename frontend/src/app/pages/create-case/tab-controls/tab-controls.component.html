@@ -1,0 +1,4 @@
+<div class="tab-controls">
+  <button *ngIf="showBack" mat-raised-button color="primary" (click)="back.emit()">Back</button>
+  <button *ngIf="showForward" mat-raised-button color="primary" (click)="forward.emit()">Continue</button>
+</div>

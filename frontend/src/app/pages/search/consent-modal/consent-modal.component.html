@@ -1,0 +1,22 @@
+<div class="stacked-form">
+  <ng-container *ngIf="!continue">
+    <h5>Request Consent</h5>
+    <p>An email will be sent to the applicant to request consent.</p>
+    <div class="spaced-row">
+      <button mat-raised-button color="accent" (click)="confirm(false)">Cancel</button>
+      <button mat-raised-button color="primary" (click)="continue = true">
+        Confirm
+      </button>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="continue">
+    <h5>Consent Requested!</h5>
+    <p>An email has been sent to the owner of this information.</p>
+    <div class="spaced-row">
+      <button mat-raised-button color="primary" (click)="confirm(true)">
+        Continue
+      </button>
+    </div>
+  </ng-container>
+
+</div>

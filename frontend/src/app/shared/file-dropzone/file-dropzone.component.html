@@ -1,0 +1,6 @@
+<ngx-dropzone style="width:560px; height: 100px; margin-top: 10px;"(change)="onSelect($event)">
+  <ngx-dropzone-label>Click here, or drop files to upload</ngx-dropzone-label>
+  <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+    <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+  </ngx-dropzone-preview>
+</ngx-dropzone>

@@ -1,0 +1,16 @@
+<button class="notification-button" mat-mini-fab [matMenuTriggerFor]="bell">
+  <mat-icon
+    matBadge="{{ notifications.length }}"
+    matBadgeColor="warn"
+    class="notification-button__icon"
+    >notifications_none</mat-icon
+  >
+</button>
+<mat-menu #bell="matMenu" xPosition="before" class="notification-menu">
+  <ng-container *ngFor="let notification of notifications">
+    <button mat-menu-item class="notification-menu__button" [routerLink]="['/check/email']">
+      <mat-icon>email</mat-icon
+      >{{ notification.message }}
+    </button>
+  </ng-container>
+</mat-menu>

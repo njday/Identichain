@@ -1,0 +1,36 @@
+<div class="manual-check">
+  <mat-toolbar class="page-header justify-center" role="heading">
+    <h5>How would you like to conduct the {{ checkTitle }} check?</h5>
+  </mat-toolbar>
+  <div class="create-check-container">
+    <div>
+      <mat-radio-group
+        aria-label="Select an option"
+        (change)="showForm = $event.value === 'true'; checkState.emit({})"
+      >
+        <mat-radio-button class="check-radio-button" value="{{ true }}"
+          >Send email</mat-radio-button
+        >
+        <mat-radio-button class="check-radio-button" value="{{ false }}"
+          >Phone call</mat-radio-button
+        >
+      </mat-radio-group>
+    </div>
+    <div class="manual-check-email" *ngIf="showForm">
+      <div class="manual-check-details">
+        <app-email-form
+          [firstName]="firstName"
+          [lastName]="lastName"
+          [checkType]="checkType"
+          (formState)="checkDetails = $event; checkState.emit($event)"
+        ></app-email-form>
+      </div>
+      <div class="manual-check-template">
+        <app-check-email
+          [details]="checkDetails"
+          [checkType]="checkType"
+        ></app-check-email>
+      </div>
+    </div>
+  </div>
+</div>

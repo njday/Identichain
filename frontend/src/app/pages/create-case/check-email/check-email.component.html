@@ -1,0 +1,11 @@
+<div class="check-email grey-background" >
+  <p>To {{details?.contactName}},</p>
+  <p *ngIf="details">
+    <textarea mat-autosize
+      matInput
+      [value]="defaultText"
+    ></textarea>
+  </p>
+  <p>Kind regards,</p>
+  <p>John Smith</p>
+</div>

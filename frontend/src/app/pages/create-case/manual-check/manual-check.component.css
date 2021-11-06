@@ -1,0 +1,9 @@
+.manual-check{
+
+}
+
+.manual-check-email{
+  display: flex;
+  flex-direction: row;
+
+}

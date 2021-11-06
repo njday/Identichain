@@ -1,0 +1,48 @@
+<div class="applicant-details">
+  <mat-toolbar class="page-header justify-center" role="heading">
+    <h5>Provide details about the case:</h5>
+  </mat-toolbar>
+  <form class="form stacked-form align-items create-check-container" [formGroup]="form">
+    <div>
+      <mat-form-field class="create-form-input">
+        <input matInput placeholder="First Name" formControlName="firstName" />
+      </mat-form-field>
+      <mat-form-field class="create-form-input">
+        <input
+          matInput
+          placeholder="Last Name"
+          type="email"
+          formControlName="lastName"
+        />
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field class="create-form-input">
+        <input
+          matInput
+          placeholder="Email"
+          type="email"
+          formControlName="email"
+        />
+      </mat-form-field>
+      <mat-form-field class="create-form-input">
+        <input
+          matInput
+          placeholder="Phone Number"
+          type="email"
+          formControlName="phoneNumber"
+        />
+      </mat-form-field>
+    </div>
+    <mat-form-field class="create-form-input max-width">
+      <textarea
+        matInput
+        mat-autosize
+        placeholder="Notes"
+        type="text"
+        formControlName="notes"
+      ></textarea>
+    </mat-form-field>
+  </form>
+</div>
